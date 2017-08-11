@@ -1,12 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-const rootElement = document.createElement('div');
-document.body.appendChild(rootElement);
+const rootElement = document.createElement('div')
+document.body.appendChild(rootElement)
 
 ReactDOM.render(
   <h1>Add your app components here</h1>,
-  rootElement,
-);
+  rootElement
+)
 
-export default true;
+export default true

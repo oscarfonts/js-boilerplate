@@ -1,7 +1,7 @@
-import index from '../src/index';
+import index from '../src/index'
 
 describe('index', () => {
   it('is true', () => {
-    expect(index).toBe(true);
-  });
-});
+    expect(index).toBe(true)
+  })
+})

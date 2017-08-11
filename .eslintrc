@@ -1,13 +1,10 @@
 {
-    "extends": "airbnb",
     "parser": "babel-eslint",
+    "extends": [
+      "standard",
+      "standard-react"
+    ],
     "env": {
-        "browser": true,
-        "jasmine": true
-    },
-    "plugins": [
-        "react",
-        "jsx-a11y",
-        "import"
-    ]
-}
+      "jasmine": true
+    }
+  }
