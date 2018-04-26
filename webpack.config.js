@@ -1,6 +1,4 @@
 const path = require('path')
-const debug = process.env.NODE_ENV !== 'production'
-const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const entryPath = path.join(__dirname, 'src')
@@ -13,6 +11,7 @@ const htmlPlugin = new HtmlWebpackPlugin({
 module.exports = {
   context: entryPath,
   entry: './index.jsx',
+  mode: 'development',
   output: {
     path: outputPath,
     filename: 'bundle.js'
@@ -35,13 +34,8 @@ module.exports = {
       }]
     }]
   },
-  plugins: debug ? [htmlPlugin] : [
-    htmlPlugin,
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true
-    })
-  ],
-  devtool: debug ? 'inline-source-map' : false,
+  plugins: [htmlPlugin],
+  devtool: 'inline-source-map',
   devServer: {
     contentBase: outputPath
   }

@@ -5,7 +5,7 @@
   "description": "js-boilerplate",
   "main": "src/index.jsx",
   "scripts": {
-    "start": "webpack-dev-server --mode=development --inline --hot",
+    "start": "webpack-dev-server --inline --hot",
     "test": "karma start",
     "build": "webpack --mode=production",
     "deploy": "npm run build && gh-pages -d dist -s '*'"
