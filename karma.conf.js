@@ -1,16 +1,4 @@
-var webpackConfig = require('./webpack.config.js');
-
-webpackConfig.module.rules.push({
-  test: /\.js$|\.jsx$/,
-  use: {
-    loader: 'istanbul-instrumenter-loader',
-    options: {
-      esModules: true
-    }
-  },
-  enforce: 'post',
-  exclude: /node_modules|Spec\.js$/
-})
+const webpackConfig = require('./webpack.config.js');
 
 module.exports = function(config) {
   config.set({
@@ -39,8 +27,8 @@ module.exports = function(config) {
     logLevel: config.LOG_INFO,
     autoWatch: true,
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: process.env.TRAVIS ? ['PhantomJS'] : ['Chrome'],
-    singleRun: process.env.TRAVIS ? true : false,
+    browsers: process.env.TRAVIS ? ['ChromeHeadless'] : ['Chrome'],
+    singleRun: !!process.env.TRAVIS,
     concurrency: Infinity
   })
 };
